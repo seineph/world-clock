@@ -40,10 +40,13 @@ border-bottom: solid 1px #b197c82d;}
 .date{color:#9783A8;font-size: 18px;
 font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif}
 
+small{color:#a08fae;
+font-size: 30px;}
 .time{font-size: 38px;
     font-weight: 800;
 font-size:sans-serif;
 color: #594080;}
+
 
 footer {
     text-align: center;
