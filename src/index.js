@@ -1,19 +1,32 @@
-let parisElement = document.querySelector("#paris");
-let parisDateElement = parisElement.querySelector(".date");
-let parisTimeElement = parisElement.querySelector(".time");
+function updateParisTime(params) {
+  let parisElement = document.querySelector("#paris");
+  let parisDateElement = parisElement.querySelector(".date");
+  let parisTimeElement = parisElement.querySelector(".time");
 
-let londonElement = document.querySelector("#london");
-let londonDateElement = londonElement.querySelector(".date");
-let londonTimeElement = londonElement.querySelector(".time");
+  let parisTime = moment().tz("Europe/Paris");
 
-parisDateElement.innerHTML = moment
-  .tz("Europe/Paris")
-  .format("dddd MMMM D , YYYY");
+  parisDateElement.innerHTML = moment()
+    .tz("Europe/Paris")
+    .format("dddd MMMM D , YYYY");
 
-londonDateElementDateElement.innerHTML = moment
-  .tz("Europe/London")
-  .format("dddd MMMM D , YYYY");
+  parisTimeElement.innerHTML = parisTime.format("hh:mm:ss [<small>]A[<small>]");
+}
+updateParisTime();
+setInterval(updateParisTime, 1000);
 
-parisTimeElement.innerHTML = moment.tz("Europe/Paris").format("hh:mm A");
+function updateLondonTime(params) {
+  let londonElement = document.querySelector("#london");
+  let londonDateElement = londonElement.querySelector(".date");
+  let londonTimeElement = londonElement.querySelector(".time");
 
-londonTimeElement.innerHTML = moment.tz("Europe/London").format("hh:mm A");
+  let londonTime = moment().tz("Europe/London");
+
+  londonDateElement.innerHTML = londonTime.format("dddd MMMM D , YYYY");
+
+  londonTimeElement.innerHTML = londonTime.format(
+    "hh:mm:ss [<small>]A[<small>]"
+  );
+}
+
+updateLondonTime();
+setInterval(updateLondonTime, 1000);
