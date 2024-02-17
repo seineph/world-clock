@@ -5,7 +5,11 @@ background-color: #ffc4d9;}
 h1{margin-top:4px;
     text-align: center;
 font-size: 46px;
-color:#7c5eaa}
+color:#7c5eaa;
+}
+
+a{color: #7c5eaa;
+text-decoration: none;}
 
 h2{font-size: 40px;margin-bottom:6px; color:#54387F}
 
