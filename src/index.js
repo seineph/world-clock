@@ -39,6 +39,9 @@ setInterval(updateLondonTime, 1000);
 
 function showCity(event) {
   let cityTimeZone = event.target.value;
+  if (cityTimeZone === "current") {
+    cityTimeZone = moment.tz.guess();
+  }
   if (cityTimeZone) {
     let cityData = moment.tz(cityTimeZone);
     let cityName = cityTimeZone.replace("_", " ").split("/")[1];
